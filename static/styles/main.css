@@ -1,4 +1,14 @@
+@font-face {
+    font-family: 'Roboto Italic';
+    src: url('../fonts/roboto-italic-webfont.woff2') format('woff2'),
+         url('../fonts/roboto-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 h1{
     color: peru;
-    font-family: sans-serif;
+    font-family: 'Roboto Italic' ,sans-serif;
 }
