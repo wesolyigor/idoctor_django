@@ -6,7 +6,7 @@ class Patient(models.Model):
     last_name = models.CharField(max_length=30)
     date_of_birth = models.DateField(null=True)
     personal_identity_number = models.IntegerField(unique=True)
-    sex = models.CharField(choices=[(0, 'male'), (1, 'female'), (2, 'other')], max_length=255)
+    sex = models.CharField(choices=[('0', 'male'), ('1', 'female'), ('2', 'other')], max_length=255)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name} identity number: {self.personal_identity_number}'
@@ -19,3 +19,5 @@ class PatientEmail(models.Model):
 
     def __str__(self):
         return f"{self.patient_id.first_name} {self.patient_id.last_name}. Email Email {self.email}"
+
+

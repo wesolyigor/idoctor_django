@@ -3,7 +3,7 @@ from datetime import date
 from django.core.exceptions import ValidationError
 from django.forms import ModelForm, DateInput
 
-from patients.models import Patient
+from patients.models import Patient, PatientEmail
 
 
 class PatientForm(ModelForm):
@@ -19,3 +19,9 @@ class PatientForm(ModelForm):
         if d > date.today():
             raise ValidationError("You can't be born in the future!")
         return d
+
+
+class PatientEmailForm(ModelForm):
+    class Meta:
+        model = PatientEmail
+        fields = ('email', )
