@@ -1,5 +1,30 @@
 {% extends '_base.html' %}
 
 {% block content %}
-<H1>Pacjent</H1>
+<H1>Patient</H1>
+
+<ul>
+
+    {% for patient in data %}
+    <li>
+
+        <b>
+            pk: {{ patient.pk }}
+            Name: {{ patient.first_name  }}
+            Last Name: {{ patient.last_name }}</b>
+            Date of Birth: {{ patient.date_of_birth }}
+            Identity Number: {{ patient.personal_identity_number }}
+            Sex: {% if patient.sex == 0  %} male {% else %} female {% endif %}
+
+        {% if patient.email %} email: {{ patient.email }} {% endif %}
+
+        <a href="{% url 'patients_edit_form' id=patient.pk %}">Edit</a>
+        <a href="Delete"></a>
+        <button>Delete</button>
+    </li>
+    {% endfor %}
+</ul>
+
+
+
 {% endblock %}

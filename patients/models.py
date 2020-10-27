@@ -8,6 +8,8 @@ class Patient(models.Model):
     personal_identity_number = models.IntegerField(unique=True)
     sex = models.CharField(choices=[('0', 'male'), ('1', 'female'), ('2', 'other')], max_length=255)
 
+    # patient_email_id = models.ForeignKey(PatientEmail, on_delete=models.CASCADE)
+
     def __str__(self):
         return f'{self.first_name} {self.last_name} identity number: {self.personal_identity_number}'
 
